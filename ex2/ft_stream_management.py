@@ -11,11 +11,13 @@ def main() -> None:
     try:
         file_obj = open(filename, "r")
     except OSError as error:
-        print(f"[STDERR] Error opening file '{filename}': {error}", file=sys.stderr)
+        print(
+            f"[STDERR] Error opening file '{filename}': {error}",
+            file=sys.stderr)
         return
     content: str = file_obj.read()
     print("---")
-    print(content, end="") # ha vor?????????????????????????????????????????????????????????????????
+    print(content)
     print("---")
 
     file_obj.close()
@@ -46,7 +48,9 @@ def main() -> None:
         new_file.close()
         print(f"Data saved in file '{new_filename}'.")
     except OSError as error:
-        print(f"[STDERR] Error saving file '{new_filename}': {error}", file=sys.stderr)
+        print(
+            f"[STDERR] Error opening file '{new_filename}': {error}",
+            file=sys.stderr)
         print("Data not saved.")
 
 
